@@ -1,13 +1,15 @@
 package com.chandan;
 
+import com.chandan.controller.BlogEntryController;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 /**
@@ -28,6 +30,7 @@ public class BlogEntryControllerTest {
 
     @Test
     public void test() throws Exception {
-        mockMvc.perform(get("/test")).andDo(print());
+        mockMvc.perform(post("/test").content("{\"title\":\"Test blog Entry\"}").contentType(MediaType.APPLICATION_JSON)
+        ).andDo(print());
     }
 }
