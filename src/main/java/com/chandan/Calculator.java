@@ -14,4 +14,14 @@ public class Calculator {
             return -arg;
         }*/
     }
+	public int absNew(int arg) {
+	System.out.println("Hello");
+	System.out.println("chandan");
+        return arg;
+        /*if (arg < 0) {
+            return -arg;
+        } else {
+            return -arg;
+        }*/
+    }
 }
